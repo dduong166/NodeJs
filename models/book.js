@@ -1,12 +1,12 @@
-data = {
-    1: {
-        name: "Nodejs tutorial",
-        author: "Bill Gates"
-    },
-    2: {
-        name: "Vinahouse guide",
-        author: "Kha Banh"
-    }
-};
+var mongoose = require('mongoose');
 
-module.exports = data;
+var BookSchema = new mongoose.Schema({
+    title: String,
+    summary: String,
+    author: String,
+    isbn: String
+});
+
+const BookModel = mongoose.model('Book', BookSchema);
+module.exports = BookModel;
+

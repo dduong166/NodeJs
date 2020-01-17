@@ -1,20 +1,25 @@
 <html>
-    <head>
-        <title>Home</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-    </head>
-    <body>
-        <p>This is a home page.</p>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>BOOKS LIST</h1>
         <ul>
-            <% for(var id in books){ %>
-                <li> <%= id %>
-                    <ul>
-                        <% for(var info in books[id]){ %>
-                            <li><%= books[id][info] %></li>
-                        <% } %>
-                    </ul>
-                </li>
-            <% } %>
+            <% books.forEach(book => { %>
+                <li><strong><%= book.title %></strong></li>
+                <li><%= book.summary %></li>
+                <li><%= book.author %></li>
+                <li><%= book.isbn %></li>
+                <br>
+            <% }) %>
         </ul>
-    </body>
+    </div>
+    <script src="js/bootstrap.js"></script>
+</body>
+
 </html>
